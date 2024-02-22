@@ -114,7 +114,6 @@ public class MorseCodeLibrary {
                         .filter(letter -> !letter.isEmpty())
                         .toArray(String[]::new);
                 for (String token : tokens) {
-                    // handle bad inputs
                     if (!token.equals(LETSPACE)) output.append((!token.equals("%")) ? DECODE_MAPPINGS.get(token) : "%");
                 }
                 if (i != words.length - 1) output.append(SIGNALSPACE);
