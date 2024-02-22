@@ -37,19 +37,15 @@ public class Main {
                 case "ENCODE":
                     System.out.println("Enter text to be encoded: ");
                     userInput = sc.nextLine();
-                    String morseCode = MorseCodeLibrary.encode(userInput);
+                    String morseCode = MorseCodeLibrary.encode(userInput.trim());
                     System.out.println(morseCode);
                     System.out.println("\nMODE SELECTION: please choose from the following 3 options. \nEnter 'ENCODE' to encode an input, \n'DECODE' to decode an input, \n'QUIT' to quit the program");
                     break;
                 case "DECODE":
                     System.out.println("Enter text to be decoded: ");
-                    userInput = sc.nextLine();
+                    userInput = sc.nextLine().trim();
                     String plainText = MorseCodeLibrary.decode(userInput);
                     System.out.println(plainText);
-                    System.out.println(plainText);
-                    if (!MorseCodeLibrary.decode(plainText).equals(userInput)) {
-                        System.out.println("decoder has been broken");
-                    }
                     System.out.println("\nMODE SELECTION: please choose from the following 3 options. \nEnter 'ENCODE' to encode an input, \n'DECODE' to decode an input, \n'QUIT' to quit the program");
                     break;
                 default:
@@ -80,7 +76,7 @@ public class Main {
             System.out.println("\nValidity of encoding cannot be verified due to non-alphanumeric characters in file\n");
         } else if (!decodedText.equalsIgnoreCase(sanitized_input)) {
             System.out.println("\nProgram may have been broken. Decoded text was not equal to input\n");
-            System.out.println("\ninput length "+sanitized_input.length() + ", decoded message length " + decodedText.length());
+            System.out.println("\ninput length " + sanitized_input.length() + ", decoded message length " + decodedText.length());
         } else {
             System.out.println("\nTranslation is believed to be successful\n");
         }

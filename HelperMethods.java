@@ -13,7 +13,7 @@ public class HelperMethods {
                 raw_input.append(sc.nextLine().trim());
             }
             sanitized_input = raw_input.toString();
-            sanitized_input = sanitized_input.replace("\r", "").replace("\n", "").replace("\0", "");
+            sanitized_input = sanitized_input.replace("\r\n", "").replace("\n", "").replace("\0", "");
             sc.close();
         } catch (IOException e) {
             System.err.println("File not found: " + e.getMessage());
@@ -21,11 +21,3 @@ public class HelperMethods {
         return sanitized_input;
     }
 }
-
-/*
-to do:
-readme
-cleanup
-repo
-email
- */
